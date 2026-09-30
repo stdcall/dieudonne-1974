@@ -4,7 +4,7 @@
   "cache": "~/.cache/dieudonne-1974",
   "stage": "final",
   "pdf_navigation": {
-    "outline_left": null
+    "outline_left": 0
   },
   "font_paths": [
     "assets/fonts"
