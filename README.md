@@ -9,7 +9,3 @@
 
 PDF книги и список исправлений — в [релизах](https://github.com/stdcall/dieudonne-1974/releases).
 Исходники — Typst; правила сборки в [CONTRIBUTING.md](CONTRIBUTING.md).
-
-В начале `content/main.typ` выбирается одна из двух обложек:
-`use-russian-cover = true` — красная русская; `false` — охристая адаптация
-с русским названием и сведениями об издании.
