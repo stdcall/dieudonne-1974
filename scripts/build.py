@@ -1,5 +1,5 @@
 """Build and validate the book and corrections. Every bookmark uses
-XYZ with null horizontal position and null zoom, preserving the view.
+XYZ with a numeric horizontal position and null zoom, preserving scale.
 Page labels and all page streams are preserved during finalization."""
 import hashlib
 import json
@@ -10,12 +10,14 @@ import subprocess
 import time
 
 from pypdf import PdfReader, PdfWriter
-from pypdf.generic import ArrayObject, FloatObject, NameObject, NullObject
+from pypdf.generic import (ArrayObject, FloatObject, NameObject, NullObject,
+                          TextStringObject)
 from check_links import check_hint_links, check_links, set_link_descriptions
 from check_whitespace import check_whitespace
 from lint_typst import (lint, input_hashes, evaluate, tool_versions,
                         unresolved_references, write_unresolved, from_roman)
 from project import settings, stage, tool_env, cache_path, typst_inputs
+from outline_math import unicode_outline_title
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -90,14 +92,18 @@ def accessibility_signature(reader):
             'font_program_sha256': sorted(embedded)}
 
 
-def normalize_outline_destinations(writer, original, *, left=None):
+def normalize_outline_destinations(writer, original, *, left=0,
+                                   chapters_start_pages=False):
     """Keep heading heights and inherited zoom in every nested bookmark."""
     count = 0
+    pages = {p.indirect_reference.idnum: p for p in original.pages}
 
     def walk(ref):
         nonlocal count
         while ref:
             node = ref.get_object()
+            title = unicode_outline_title(str(node['/Title']))
+            node[NameObject('/Title')] = TextStringObject(title)
             holder, key = node, '/Dest'
             if '/A' in node:
                 holder = node['/A'].get_object()
@@ -112,9 +118,15 @@ def normalize_outline_destinations(writer, original, *, left=None):
             if not isinstance(dest, (list, ArrayObject)) or len(dest) != 5 \
                     or dest[1] != '/XYZ':
                 raise ValueError(f'Unexpected destination: {dest}')
-            x = NullObject() if left is None else FloatObject(left)
+            top = dest[3]
+            if chapters_start_pages and title.startswith('Глава '):
+                page = pages[dest[0].idnum]
+                assert page.get('/Rotate', 0) == 0
+                assert list(page.cropbox) == list(page.mediabox)
+                top = FloatObject(page.mediabox.top)
+            x = FloatObject(left)
             holder[NameObject(key)] = ArrayObject([
-                dest[0], NameObject('/XYZ'), x, dest[3], NullObject()])
+                dest[0], NameObject('/XYZ'), x, top, NullObject()])
             count += 1
             if node.get('/First'):
                 walk(node['/First'])
@@ -175,7 +187,8 @@ def normalize_outlines(raw, output, *, book=True, references=()):
     set_link_descriptions(writer, references)
     preserved = accessibility_signature(original)
     left = settings()['pdf_navigation']['outline_left']
-    count = normalize_outline_destinations(writer, original, left=left)
+    count = normalize_outline_destinations(
+        writer, original, left=left, chapters_start_pages=book)
     assert '/OpenAction' not in writer.root_object
     tmp = Path(output).with_suffix('.tmp.pdf')
     writer.write(tmp)
@@ -195,8 +208,7 @@ def normalize_outlines(raw, output, *, book=True, references=()):
                 continue
             dest = item.dest_array
             assert len(dest) == 5 and dest[1] == '/XYZ'
-            assert (isinstance(dest[2], NullObject) if left is None
-                    else float(dest[2]) == left)
+            assert float(dest[2]) == left
             assert isinstance(dest[4], NullObject), 'Bookmark sets a zoom'
             page = checked.get_destination_page_number(item)
             assert page is not None and 0 <= page < len(checked.pages)
