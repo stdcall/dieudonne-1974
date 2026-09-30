@@ -1,5 +1,5 @@
 // Change this one flag: true = the Russian red cover, false = ochre.
-#let use-russian-cover = false
+#let use-russian-cover = true
 #set document(
   title: "Геометрия классических групп",
   author: "Ж. Дьёдонне",
