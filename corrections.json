@@ -1,0 +1,614 @@
+{
+  "entries": [
+    {
+      "printed_page": "21",
+      "section": "Глава I",
+      "place": "§4, случай B2α, абзац после (6)",
+      "original": "пространства $U^+$ (над $K$)",
+      "corrected": "пространства $U^+$ (над $K_1$)",
+      "reason": "Пространство $U^+$ состоит из неподвижных векторов полулинейной инволюции и замкнуто лишь относительно скаляров из неподвижного подтела $K_1$. Предыдущий абзац прямо указывает это поле скаляров.",
+      "verified_by": "Определение U+ и контрпример: комплексное сопряжение, U+=R не является C-подпространством.",
+      "id": "C001"
+    },
+    {
+      "printed_page": "21",
+      "section": "Глава I",
+      "place": "§4, случай B2β, формула (8)",
+      "original": "$beta^tau - beta = lambda^2 + lambda$",
+      "corrected": "$beta^tau - beta = lambda^2 + lambda + D lambda$",
+      "reason": "Подставляя $theta^tau = theta + lambda$ в $beta = theta^2 + theta$, получаем смешанные члены $theta lambda + lambda theta = D lambda$. В некоммутативном теле они могут быть ненулевыми.",
+      "verified_by": "Точный кватернионный контрпример checks/sage/quadratic-centralizer.py; Lean: Dieudonne.artin_schreier_shift.",
+      "id": "C002"
+    },
+    {
+      "printed_page": "34",
+      "section": "Глава I",
+      "place": "§9, абзац перед (21)",
+      "original": "для данного $y in F$",
+      "corrected": "для данного $y in E$",
+      "reason": "Форма определена на $E times E$; рассматриваемые векторы $x$ и $y$ лежат в $E$. Пространство $F$ в этом параграфе не введено.",
+      "verified_by": "Определения в §§5–6 и начало §9; печатное чтение на с.34.",
+      "id": "C003"
+    },
+    {
+      "printed_page": "50",
+      "section": "Глава I",
+      "place": "§14, случай B1β, описание факторгруппы",
+      "original": "группа $H'_1 slash H_2$",
+      "corrected": "группа $H_1 slash H_2$",
+      "reason": "$H_2$ определена как ядро ограничения группы $H_1$ на $U$, а $H'_1$ — его образ. По теореме о гомоморфизме описываемая аддитивная группа изоморфна $H_1 slash H_2 = H'_1$. Знаменатель $H_2$ не является указанной подгруппой образа.",
+      "verified_by": "Определения H1, H2 и H′1 на с.49; теорема о гомоморфизме.",
+      "id": "C004"
+    },
+    {
+      "printed_page": "52",
+      "section": "Глава I",
+      "place": "§14, случай B2β",
+      "original": "$K = K_1 theta$",
+      "corrected": "$K = K_1 (theta)$",
+      "reason": "Здесь $theta^sigma = theta + 1$, поэтому $theta$ не принадлежит неподвижному подтелу $K_1$. Множество $K_1 theta$ не содержит единицу и не является телом. Скобки восстанавливают обозначение поля, эквивалентное разложению $K = K_1 + K_1 theta$ в §4.",
+      "verified_by": "Случай B2β в §4 и прямое противоречие при предположении 1∈K1θ.",
+      "id": "C005"
+    },
+    {
+      "printed_page": "59",
+      "section": "Глава I",
+      "place": "§16, недефектная нормальная форма над конечным полем",
+      "original": "$xi_(p-1) xi_(2p-2)$",
+      "corrected": "$xi_(p-1) xi_(2p-1)$",
+      "reason": "Симплектические пары имеют индексы $(i, p+i)$. В печатной формуле координата $xi_(2p-1)$ отсутствует, так что полярная форма вырождена. Исправленная формула содержит все пары и имеет полный ранг.",
+      "verified_by": "Симплектическая нормальная форма; checks/sage/normal-form-index.py, 14 точных проверок ранга над GF(2), p=2…8, SageMath 10.9.",
+      "id": "C006"
+    },
+    {
+      "printed_page": "63",
+      "section": "Глава II",
+      "place": "§1, замечание о числе сдвигов",
+      "original": "равно $n$, если данное преобразование не есть гомотетия, и $n+1$ в противном случае",
+      "corrected": "не превосходит $n$, если данное преобразование не есть гомотетия, и не превосходит $n+1$ в противном случае",
+      "reason": "Указанные числа дают общую верхнюю оценку, а не длину каждого элемента. Например, матрица $I+E_(12)$ в $SL_3 (bb(Q))$ сама является одним сдвигом и не является гомотетией; единица имеет длину ноль.",
+      "verified_by": "Контрпример I3+E12; Jérémy Le Borgne, Groupes linéaires, remarque 5, с.3, общая верхняя оценка.",
+      "id": "C007"
+    },
+    {
+      "printed_page": "72",
+      "section": "Глава II",
+      "place": "§4, лемма 2, действие сдвига",
+      "original": "$x mapsto x+c f(c,x)$",
+      "corrected": "$x mapsto x-c f(c,x)$",
+      "reason": "При $c=a-b mu$ и $mu=f(a,b)^(-1)$ косоэрмитовость даёт $f(c,a)=1$. Поэтому печатный сдвиг переводит $a$ в $2a-b mu$, а исправленный — в $b mu$, как требуется. Над $bb(Q)$ для $a=(1,0)$, $b=(0,1)$ и стандартной кососимметричной формы получаются соответственно $(2,-1)$ и $(0,1)$.",
+      "verified_by": "Общий расчёт f(c,a); 19 точных проверок в checks/sage/unitary-transvection.py.",
+      "id": "C008"
+    },
+    {
+      "printed_page": "82",
+      "section": "Глава II",
+      "place": "§5, порядок унитарной группы над конечным полем",
+      "original": "$q^n-(-1)^n) q^(n-1)$",
+      "corrected": "$ (q^n-(-1)^n) q^(n-1)$",
+      "reason": "В первом множителе отсутствует открывающая скобка. Она восстановлена в соответствии с закрывающей скобкой и последующими множителями формулы.",
+      "verified_by": "Печатная формула на с.82, увеличенный просмотр.",
+      "id": "C009"
+    },
+    {
+      "printed_page": "86",
+      "section": "Глава II",
+      "place": "§7, определение идеала алгебры Клиффорда",
+      "original": "$x ⊗ y - y ⊗ x - 2 f(x,y)$",
+      "corrected": "$x ⊗ y + y ⊗ x - 2 f(x,y)$",
+      "reason": "При $x=y$ печатное соотношение даёт $2f(x,x)=0$ и, для невырожденной симметричной формы в характеристике $!=2$, обнуляет единицу фактор-алгебры. Знак плюс согласуется с квадратом $x^2=f(x,x)$ и соотношениями (5) и (6).",
+      "verified_by": "Подстановка x=y; формулы (5) и (6) на следующей странице.",
+      "id": "C010"
+    },
+    {
+      "printed_page": "93",
+      "section": "Глава II",
+      "place": "§8, замечание о симметрии −I",
+      "original": "чтобы преобразование $x mapsto -x$ принадлежало группе $O'_n$ (даже если $nu=0$)",
+      "corrected": "чтобы преобразование $x mapsto -x$ при четном $n$ принадлежало группе $O'_n$ (даже если $nu=0$)",
+      "reason": "Группа $O'_n$ лежит в группе вращений. При нечётном $n$ определитель $-I$ равен $-1$, так что $-I$ не принадлежит $O'_n$, даже если дискриминант является квадратом. При чётном $n$ критерий следует из вычисленной здесь спинорной нормы.",
+      "verified_by": "Определение O′n как ядра спинорной нормы на O⁺n; det(−I)=(−1)^n. Контрпример I3 над Q.",
+      "id": "C011"
+    },
+    {
+      "printed_page": "98",
+      "section": "Глава II",
+      "place": "§9, п.8, условия на изотропные векторы",
+      "original": "три различных изотропных вектора $a$, $b$ и $b'$ таких, что $f(a,b)=f(a,b')=0$",
+      "corrected": "три различных изотропных вектора $a$, $b$ и $b'$ таких, что $f(a,b)=f(a,b')=0$, причем $b$ и $b'$ не пропорциональны $a$",
+      "reason": "В расщеплённом пространстве размерности 5 над $bb(Q)$ векторы $a=e_1$, $b=2a$ и $b'=3a$ удовлетворяют печатным условиям, но $v(a)=a$ влечёт $v(2a)=2a!=3a$. Доказательство использует плоскости $K a+K b$ и $K a+K b'$, для которых необходимо добавленное условие.",
+      "verified_by": "Линейность v; точный контрпример в checks/sage/bounded-errata-tests.py.",
+      "id": "C012"
+    },
+    {
+      "printed_page": "104",
+      "section": "Глава II",
+      "place": "§10, формула (21)",
+      "original": "$alpha_i a_(i j)c_(i j)+beta_i b_(i j)d_(i j)+b_(i j)c_(i j)$",
+      "corrected": "$alpha_j a_(i j)c_(i j)+beta_j b_(i j)d_(i j)+b_(i j)c_(i j)$",
+      "reason": "Первый индекс обозначает номер образа, второй — базисного вектора. Коэффициенты квадратичной формы зависят от второго индекса. Симплектическое преобразование формы $x_1x_3+x_2x_4+t x_4^2$ над $bb(F)_2(t)$ даёт с печатными индексами $D=0$ при изменении инварианта на $t^2+t$. С индексами $j$ получается $D=t$, что согласуется с (20).",
+      "verified_by": "Точный расчёт над F₂(t) в checks/sage/bounded-errata-tests.py; формула (21) раннего французского издания.",
+      "id": "C013"
+    },
+    {
+      "printed_page": "107",
+      "section": "Глава II",
+      "place": "§10, п.7, ссылки на §8",
+      "original": "как в §8, п.2)… Вторая часть… как в §8, п.3",
+      "corrected": "как в §8, п.1)… Вторая часть… как в §8, п.2",
+      "reason": "В §8 п.1 доказывает разложение $u=s v$, а п.2 — транзитивность $Omega_n$ на гиперболических плоскостях. Пункта 3 в §8 нет. Обе печатные ссылки сдвинуты на единицу.",
+      "verified_by": "Независимо просмотрены физические106,91,92 и цели утверждений.",
+      "id": "C014"
+    },
+    {
+      "printed_page": "110",
+      "section": "Глава II",
+      "place": "§10, п.11a, норма кватернионного элемента",
+      "original": "$x_1^2+rho x_0x_3+alpha beta gamma delta x_3^2+alpha beta x_1^2+rho x_1x_2+gamma delta x_2^2$",
+      "corrected": "$x_0^2+rho x_0x_3+alpha beta gamma delta x_3^2+alpha beta x_1^2+rho x_1x_2+gamma delta x_2^2$",
+      "reason": "Первый индекс должен быть 0. Для единичного элемента $x_0=1$, $x_1=x_2=x_3=0$ норма равна 1, тогда как печатная формула даёт 0. Последующая линейная подстановка также требует первого члена $x_0^2$.",
+      "verified_by": "Норма1 и раскрытие указанной подстановки; два чтения с.110.",
+      "id": "C015"
+    },
+    {
+      "printed_page": "114",
+      "section": "Глава II",
+      "place": "§12, вещественная положительно определённая форма",
+      "original": "$O_n^+(bb(R),f)$ проста",
+      "corrected": "$PO_n^+(bb(R),f)$ проста",
+      "reason": "При чётной размерности, например $n=6$, группа $O_n^+(bb(R),f)=SO_n(bb(R),f)$ содержит собственную центральную подгруппу $\\{±I\\}$ и не является простой. Утверждение относится к её проективному образу. Условия $n>=3$, $n!=4$ сохранены.",
+      "verified_by": "Скалярная матрица −I₆ имеет определитель 1 и коммутирует с любой матрицей; точные проверки checks/sage/bounded-errata-tests.py.",
+      "id": "C016"
+    },
+    {
+      "printed_page": "131",
+      "section": "Глава III",
+      "place": "§2, отклонение подпространств",
+      "original": "если $2r > n-2$, от отклонение двух",
+      "corrected": "если $2r > n-2$, то отклонение двух",
+      "reason": "Переставленные буквы восстановлены в конструкции «если …, то …»; математическое содержание не изменено.",
+      "verified_by": "Печатное чтение на с.131, строка с условием 2r>n−2.",
+      "id": "C017"
+    },
+    {
+      "printed_page": "143",
+      "section": "Глава III",
+      "place": "§5, определение геометрии Бэра",
+      "original": "соответствии с множеством инволюций в группе $G$",
+      "corrected": "соответствии с множеством элементов в группе $G$",
+      "reason": "В геометрии $D(G)$ точки и гиперплоскости соответствуют всем элементам группы. Инволюции задают инцидентность, а не множество точек. Это определение в §1.A статьи Бэра; её §7, теорема 1, относится к пространству размерности 3. #link(\"https://www.numdam.org/item/CM_1951__9__241_0.pdf\")[Оригинал статьи.]",
+      "verified_by": "R. Baer, The group of motions of a two-dimensional elliptic geometry, Comp. Math. 9 (1951), 241–288: §1.A, с.243; §7 Theorem1, с.276.",
+      "id": "C018"
+    },
+    {
+      "printed_page": "153",
+      "section": "Глава IV",
+      "place": "§2, инволюции SL₂(K)",
+      "original": "не содержит инволюций, отличных от единицы",
+      "corrected": "не содержит инволюций, отличных от $±1$",
+      "reason": "В рассматриваемом случае характеристика не равна 2 и $-1$ не принадлежит коммутанту мультипликативной группы тела. Нецентральная инволюция размерности 2 имеет тип $(1,1)$ и определитель $-1$, поэтому не принадлежит $SL_2$. Однако обе центральные матрицы $±I_2$ принадлежат $SL_2$, причём $-I_2$ имеет порядок 2.",
+      "verified_by": "Разложение на ±1 собственные пространства; определитель −I₂=1.",
+      "id": "C019"
+    },
+    {
+      "printed_page": "155",
+      "section": "Глава IV",
+      "place": "§3, сравнение размерностей",
+      "original": "при q < n",
+      "corrected": "при q < m",
+      "reason": "В этом абзаце рассматриваются группы $Sp_(2m)(K)$ и $Sp_(2q)(K)$; доказательство ведётся индукцией по $m$. Размерность $n$ здесь не введена. Требуется сравнение меньшей размерности $2q<2m$.",
+      "verified_by": "Два независимых чтения; совместное собственное разложение и центр произведения унитарных групп.",
+      "id": "C020"
+    },
+    {
+      "printed_page": "156",
+      "section": "Глава IV",
+      "place": "§4, значения ν(u) для экстремальных инволюций",
+      "original": "экстремальна, то ν(u)=16; если она не экстремальна, то ν(u)=8",
+      "corrected": "экстремальна, то ν(u)=8; если она не экстремальна, то ν(u)=16",
+      "reason": "В характеристике не 2 коммутирующие инволюции дают совместное разложение на собственные пространства. Центр произведения соответствующих унитарных групп содержит по одной независимой инволюции $±1$ на каждый ненулевой блок. Экстремальный тип $(1,n-1)$ допускает максимум три блока, то есть $2^3=8$ инволюций. Неэкстремальный тип допускает четыре блока, то есть $2^4=16$. Эти числа согласуются с IV §§1, 3.",
+      "verified_by": "Два независимых чтения; совместное собственное разложение и центр произведения унитарных групп.",
+      "id": "C021"
+    },
+    {
+      "printed_page": "171",
+      "section": "Глава IV",
+      "place": "§8, п.4, поле скаляров пространства F",
+      "original": "4-мерное векторное пространство $F$ над $K$",
+      "corrected": "4-мерное векторное пространство $F$ над $K_3$",
+      "reason": "Здесь $L$ — двумерное правое пространство над $K_3$. Указанные векторы $e_1,e_2,e_1 rho,e_2 rho$ образуют базис $F=L^2$ над $K_3$, поэтому его размерность равна 4 именно над $K_3$. Поскольку $[K_3:K]=4$, размерность над $K$ равна 16.",
+      "verified_by": "Размерности L² и выписанный базис над K₃.",
+      "id": "C022"
+    },
+    {
+      "printed_page": "174",
+      "section": "Глава IV",
+      "place": "§8, п.8, матричное действие",
+      "original": "$X mapsto U X(P overline(U) P^(-1))$",
+      "corrected": "$X mapsto U X(P overline(U)^T P^(-1))$",
+      "reason": "Покомпонентное сопряжение сохраняет порядок множителей, тогда как при композиции правых умножений их порядок обращается. Транспонирование восстанавливает закон $T_U T_V=T_(U V)$. При $det U=1$ действие сохраняет определитель $X$ и эрмитовость $X P$.",
+      "verified_by": "Точное символическое вычисление композиции и определителя: checks/sage/exceptional-matrix-action.py.",
+      "id": "C023"
+    },
+    {
+      "printed_page": "174",
+      "section": "Глава IV",
+      "place": "§8, п.8, базис для матричного действия",
+      "original": "$e'_2=(omega e_2+e_3)/(2 omega a_2)$, $e'_3=(omega e_2-e_3)/(2 omega)$",
+      "corrected": "$e'_2=a_2 e_2+e_3$, $e'_3=omega (a_2 e_2-e_3)$",
+      "reason": "Печатная замена переводит координаты исходной квадратичной формы в координаты определителя. Поскольку действие уже задано на матрицах, для его записи в исходных координатах нужна обратная замена. Исправленные столбцы образуют обратную матрицу; полученное действие определено над $K$ и сохраняет $xi_1 xi_4-a_2 xi_2^2-a_3 xi_3^2$.",
+      "verified_by": "Символическая обратная матрица, сохранение формы и K-рациональность: checks/sage/exceptional-matrix-action.py.",
+      "id": "C024"
+    },
+    {
+      "printed_page": "186",
+      "section": "Список литературы",
+      "place": "Бэр (Baer R.), [3]",
+      "original": "19–52",
+      "corrected": "1952",
+      "reason": "В записи издателя указан год 1952. #link(\"https://shop.elsevier.com/books/linear-algebra-and-projective-geometry/baer/978-0-12-072250-1\")[Источник.]",
+      "verified_by": "https://shop.elsevier.com/books/linear-algebra-and-projective-geometry/baer/978-0-12-072250-1",
+      "id": "C025"
+    },
+    {
+      "printed_page": "186",
+      "section": "Список литературы",
+      "place": "Бэр (Baer R.), [2]",
+      "original": "271–288",
+      "corrected": "241–288",
+      "reason": "Статья начинается на с.241, что подтверждают её первый лист и запись издателя. #link(\"https://www.numdam.org/item/CM_1951__9__241_0.pdf\")[Оригинал статьи.]",
+      "verified_by": "Первый печатный лист статьи и Numdam CM_1951__9__241_0.",
+      "id": "C026"
+    },
+    {
+      "printed_page": "186",
+      "section": "Список литературы",
+      "place": "Бэр (Baer R.), [1]",
+      "original": "68 (1951), 439–460",
+      "corrected": "68 (1950), 439–460",
+      "reason": "Работа Free mobility and Orthogonality опубликована в мае 1950, т.68, №3. #link(\"https://www.jstor.org/stable/i308300\")[Выпуск издателя.]",
+      "verified_by": "AMS, DOI10.1090/S0002-9947-1950-0035770-0; JSTOR, выпуск68(3), May1950.",
+      "id": "C027"
+    },
+    {
+      "printed_page": "187",
+      "section": "Список литературы",
+      "place": "Воненбургер (Wonenburger M.), [4]",
+      "original": "84 (1963)",
+      "corrected": "84 (1962)",
+      "reason": "Авторский оттиск указывает American Journal of Mathematics, т.84, 1962. #link(\"https://consellodacultura.gal/mediateca/extras/ccg_pr_a19-mulleres_textos_214_09.pdf\")[Источник.]",
+      "verified_by": "https://consellodacultura.gal/mediateca/extras/ccg_pr_a19-mulleres_textos_214_09.pdf",
+      "id": "C028"
+    },
+    {
+      "printed_page": "187",
+      "section": "Список литературы",
+      "place": "Воненбургер (Wonenburger M.), [5]",
+      "original": "84 (1963)",
+      "corrected": "84 (1962)",
+      "reason": "Авторский оттиск указывает American Journal of Mathematics, т.84, 1962. #link(\"https://consellodacultura.gal/mediateca/extras/ccg_pr_a19-mulleres_textos_214_10.pdf\")[Источник.]",
+      "verified_by": "https://consellodacultura.gal/mediateca/extras/ccg_pr_a19-mulleres_textos_214_10.pdf",
+      "id": "C029"
+    },
+    {
+      "printed_page": "188",
+      "section": "Список литературы",
+      "place": "Дьёдонне (Dieudonné J.), [6]",
+      "original": "pertables",
+      "corrected": "permutables",
+      "reason": "В авторском названии стоит слово permutables. #link(\"https://www.academie-sciences.fr/pdf/dossiers/fonds_pdf/11J_Jean_Dieudonne.pdf\")[Источник.]",
+      "verified_by": "https://www.academie-sciences.fr/pdf/dossiers/fonds_pdf/11J_Jean_Dieudonne.pdf",
+      "id": "C030"
+    },
+    {
+      "printed_page": "188",
+      "section": "Список литературы",
+      "place": "Дьёдонне (Dieudonné J.), [8]",
+      "original": "characterististic",
+      "corrected": "characteristic",
+      "reason": "В названии работы слово characteristic напечатано без лишних букв. #link(\"https://www.ams.org/journals/proc/1951-002-06/proc-2-6-print-matter.pdf\")[Источник.]",
+      "verified_by": "https://www.ams.org/journals/proc/1951-002-06/proc-2-6-print-matter.pdf",
+      "id": "C031"
+    },
+    {
+      "printed_page": "188",
+      "section": "Список литературы",
+      "place": "Джекобсон (Jacobson N.), [4]",
+      "original": "46 (1950), 265–268",
+      "corrected": "46 (1940), 264–268",
+      "reason": "Запись издателя AMS указывает 1940 и с.264–268. #link(\"https://api.crossref.org/works/10.1090/S0002-9904-1940-07187-3\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1090/S0002-9904-1940-07187-3",
+      "id": "C032"
+    },
+    {
+      "printed_page": "189",
+      "section": "Список литературы",
+      "place": "Капланский (Kaplansky I.), [1]",
+      "original": "Anals",
+      "corrected": "Anais",
+      "reason": "Библиография автора в Institute for Advanced Study указывает название журнала Anais. #link(\"https://www.ias.edu/sites/default/files/library/pdfs/ar/publicationsofme00inst.pdf\")[Источник.]",
+      "verified_by": "https://www.ias.edu/sites/default/files/library/pdfs/ar/publicationsofme00inst.pdf",
+      "id": "C033"
+    },
+    {
+      "printed_page": "189",
+      "section": "Список литературы",
+      "place": "Капланский (Kaplansky I.), [2]",
+      "original": "infivite-dimensional",
+      "corrected": "infinite-dimensional",
+      "reason": "В названии статьи стоит infinite-dimensional. #link(\"https://www.jstor.org/stable/i335855\")[Источник.]",
+      "verified_by": "https://www.jstor.org/stable/i335855",
+      "id": "C034"
+    },
+    {
+      "printed_page": "190",
+      "section": "Список литературы",
+      "place": "Клингенберг (Klingenberg W.), [2]",
+      "original": "Amer. Math.",
+      "corrected": "Amer. J. Math.",
+      "reason": "Работа опубликована в American Journal of Mathematics, т.83, №2, с.281–320; восстановлена буква J. #link(\"https://www.jstor.org/stable/i316400\")[Источник.]",
+      "verified_by": "https://www.jstor.org/stable/i316400",
+      "id": "C035"
+    },
+    {
+      "printed_page": "190",
+      "section": "Список литературы",
+      "place": "Кнезер (Kneser M.), [3]",
+      "original": "Abn.",
+      "corrected": "Abh.",
+      "reason": "Правильное сокращение названия Abhandlungen — Abh. #link(\"https://abhandlungen.math.uni-hamburg.de/en/archiv.php?vol=31\")[Источник.]",
+      "verified_by": "https://abhandlungen.math.uni-hamburg.de/en/archiv.php?vol=31",
+      "id": "C036"
+    },
+    {
+      "printed_page": "190",
+      "section": "Список литературы",
+      "place": "Ландгерр (Landherr W.), [1]",
+      "original": "Äquivalen",
+      "corrected": "Äquivalenz",
+      "reason": "Издатель приводит название со словом Äquivalenz. #link(\"https://link.springer.com/article/10.1007/BF02940728\")[Источник.]",
+      "verified_by": "https://link.springer.com/article/10.1007/BF02940728",
+      "id": "C037"
+    },
+    {
+      "printed_page": "190",
+      "section": "Список литературы",
+      "place": "Ландгерр (Landherr W.), [2]",
+      "original": "Abn.",
+      "corrected": "Abh.",
+      "reason": "Восстановлено сокращение Abhandlungen; слово Liesche сохранено. #link(\"https://link.springer.com/article/10.1007/BF02948944\")[Источник.]",
+      "verified_by": "https://link.springer.com/article/10.1007/BF02948944",
+      "id": "C038"
+    },
+    {
+      "printed_page": "190",
+      "section": "Список литературы",
+      "place": "Ландгерр (Landherr W.), [2]",
+      "original": "12 (1938)",
+      "corrected": "12 (1937)",
+      "reason": "Журнальная статья опубликована в декабре 1937. Архив Hamburg различает её и репринт Habilitationsschrift 1938. #link(\"https://link.springer.com/article/10.1007/BF02948944\")[Источник.]",
+      "verified_by": "https://link.springer.com/article/10.1007/BF02948944",
+      "id": "C039"
+    },
+    {
+      "printed_page": "191",
+      "section": "Список литературы",
+      "place": "Минковский (Minkowski H.), [1]",
+      "original": "106 (1850)",
+      "corrected": "106 (1890)",
+      "reason": "Запись издателя De Gruyter указывает 1890. #link(\"https://api.crossref.org/works/10.1515/crll.1890.106.5\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1515/crll.1890.106.5",
+      "id": "C040"
+    },
+    {
+      "printed_page": "191",
+      "section": "Список литературы",
+      "place": "Минковский (Minkowski H.), [1]",
+      "original": "Fermen",
+      "corrected": "Formen",
+      "reason": "В оригинальном названии статьи стоит слово Formen. #link(\"https://api.crossref.org/works/10.1515/crll.1890.106.5\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1515/crll.1890.106.5",
+      "id": "C041"
+    },
+    {
+      "printed_page": "191",
+      "section": "Список литературы",
+      "place": "Минковский (Minkowski H.), [1]",
+      "original": "werdn",
+      "corrected": "werden",
+      "reason": "В оригинальном названии статьи стоит слово werden. #link(\"https://api.crossref.org/works/10.1515/crll.1890.106.5\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1515/crll.1890.106.5",
+      "id": "C042"
+    },
+    {
+      "printed_page": "192",
+      "section": "Список литературы",
+      "place": "Райнер (Reiner I.), [1]",
+      "original": "Trans. Amer. Soc.",
+      "corrected": "Trans. Amer. Math. Soc.",
+      "reason": "Полное название журнала — Transactions of the American Mathematical Society; восстановлено слово Math. #link(\"https://api.crossref.org/works/10.1090/S0002-9947-1955-0073603-1\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1090/S0002-9947-1955-0073603-1",
+      "id": "C043"
+    },
+    {
+      "printed_page": "193",
+      "section": "Список литературы",
+      "place": "Спрингер (Springer T.), [3]",
+      "original": "62 (1969)",
+      "corrected": "62 (1959)",
+      "reason": "Запись издателя Elsevier указывает 1959, т.62, с.241–253. #link(\"https://api.crossref.org/works/10.1016/S1385-7258(59)50026-8\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1016/S1385-7258(59)50026-8",
+      "id": "C044"
+    },
+    {
+      "printed_page": "193",
+      "section": "Список литературы",
+      "place": "Спрингер, Ван-дер-Блей (Springer T., van der Blij F.), [1]",
+      "original": "van der Blij R.",
+      "corrected": "van der Blij F.",
+      "reason": "В собственной ссылке Спрингера на эту работу соавтор обозначен инициалом F. #link(\"https://www.digizeitschriften.de/download/pdf/266833020_0107/log45.pdf\")[Источник.]",
+      "verified_by": "https://www.digizeitschriften.de/download/pdf/266833020_0107/log45.pdf",
+      "id": "C045"
+    },
+    {
+      "printed_page": "193",
+      "section": "Список литературы",
+      "place": "Спрингер, Ван-дер-Блей (Springer T., van der Blij F.), [1]",
+      "original": "New Arch.",
+      "corrected": "Nieuw Arch.",
+      "reason": "Работа опубликована в Nieuw Archief voor Wiskunde. #link(\"https://www.digizeitschriften.de/download/pdf/266833020_0107/log45.pdf\")[Источник.]",
+      "verified_by": "https://www.digizeitschriften.de/download/pdf/266833020_0107/log45.pdf",
+      "id": "C046"
+    },
+    {
+      "printed_page": "194",
+      "section": "Список литературы",
+      "place": "Стейнберг (Steinberg R.), [1]",
+      "original": "10 (1960)",
+      "corrected": "12 (1960)",
+      "reason": "Издатель указывает т.12, 1960, с.606–615. Год верен, исправлен номер тома. #link(\"https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/automorphisms-of-finite-linear-groups/16023F257E0F21D57873B1450E9F15E4\")[Источник.]",
+      "verified_by": "https://www.cambridge.org/core/journals/canadian-journal-of-mathematics/article/automorphisms-of-finite-linear-groups/16023F257E0F21D57873B1450E9F15E4",
+      "id": "C047"
+    },
+    {
+      "printed_page": "194",
+      "section": "Список литературы",
+      "place": "Титс (Tits J.), [2]",
+      "original": "besées",
+      "corrected": "basées",
+      "reason": "В оригинальном названии работы стоит слово basées. #link(\"https://www.persee.fr/doc/barb_0001-4141_1951_num_37_1_70565\")[Источник.]",
+      "verified_by": "https://www.persee.fr/doc/barb_0001-4141_1951_num_37_1_70565",
+      "id": "C048"
+    },
+    {
+      "printed_page": "194",
+      "section": "Список литературы",
+      "place": "Фрейденталь (Freudenthal H.), [1]",
+      "original": "117–153.",
+      "corrected": "117–153.\\]",
+      "reason": "Восстановлена закрывающая квадратная скобка в записи русского перевода.",
+      "verified_by": "Печатное издание, с.194: открывающая скобка у записи русского перевода.",
+      "id": "C049"
+    },
+    {
+      "printed_page": "194",
+      "section": "Список литературы",
+      "place": "Уолл (Wall G. E.), [1]",
+      "original": "Wal G. E.",
+      "corrected": "Wall G. E.",
+      "reason": "Восстановлена полная фамилия автора: Wall. #link(\"https://pmihes.centre-mersenne.org/articles/10.1007/BF02684272/\")[Источник.]",
+      "verified_by": "https://pmihes.centre-mersenne.org/articles/10.1007/BF02684272/",
+      "id": "C050"
+    },
+    {
+      "printed_page": "194",
+      "section": "Список литературы",
+      "place": "Уолл (Wall G. E.), запись [2]",
+      "original": "Запись отсутствует; в §12 главы I есть ссылка на Уолла [2].",
+      "corrected": "On the conjugacy classes in the unitary, symplectic and orthogonal groups, _J. Austral. Math. Soc._, 3 (1963), 1–62.",
+      "reason": "Восстановлена пропущенная работа о классификации классов сопряжённости — предмет ссылки в §12. #link(\"https://doi.org/10.1017/S1446788700027622\")[Запись издателя и оригинал статьи.]",
+      "verified_by": "Cambridge University Press, DOI 10.1017/S1446788700027622; контекст ссылки на с.42.",
+      "id": "C051"
+    },
+    {
+      "printed_page": "195",
+      "section": "Список литературы",
+      "place": "Хуа (Hua L.-K.), [8]",
+      "original": "Some properties to a field",
+      "corrected": "Some properties of a sfield",
+      "reason": "Издатель приводит название Some properties of a sfield. #link(\"https://api.crossref.org/works/10.1073/pnas.35.9.533\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1073/pnas.35.9.533",
+      "id": "C052"
+    },
+    {
+      "printed_page": "195",
+      "section": "Список литературы",
+      "place": "Хуа (Hua L.-K.), [7]",
+      "original": "On the automorphisms of a field",
+      "corrected": "On the automorphisms of a sfield",
+      "reason": "Издатель приводит название On the automorphisms of a sfield. #link(\"https://api.crossref.org/works/10.1073/pnas.35.7.386\")[Источник.]",
+      "verified_by": "https://api.crossref.org/works/10.1073/pnas.35.7.386",
+      "id": "C053"
+    },
+    {
+      "printed_page": "195",
+      "section": "Список литературы",
+      "place": "Хуа (Hua L.-K.), [2]",
+      "original": "Arithmetical constructions; 482–580",
+      "corrected": "Arithmetical construction; 482–490",
+      "reason": "В названии работы слово construction стоит в единственном числе; работа занимает с.482–490. #link(\"https://doi.org/10.1090/S0002-9947-1945-0012680-4\")[Запись издателя.]",
+      "verified_by": "AMS, запись издателя DOI10.1090/S0002-9947-1945-0012680-4; MathSciNetMR0012680.",
+      "id": "C054"
+    },
+    {
+      "printed_page": "196",
+      "section": "Список литературы",
+      "place": "Шевалле (Chevalley C.), [4]",
+      "original": "liée l'étude",
+      "corrected": "liée à l'étude",
+      "reason": "В оригинальном названии работы после liée стоит предлог à. #link(\"https://ksda.ccny.cuny.edu/PostedPapers/Scott110609.pdf\")[Источник.]",
+      "verified_by": "https://ksda.ccny.cuny.edu/PostedPapers/Scott110609.pdf",
+      "id": "C055"
+    },
+    {
+      "printed_page": "197",
+      "section": "Список литературы",
+      "place": "Шпигель (Spiegel E.), [2]",
+      "original": "Amer. Math.",
+      "corrected": "Amer. J. Math.",
+      "reason": "Работа опубликована в American Journal of Mathematics; восстановлена буква J. #link(\"https://www.jstor.org/stable/i340793\")[Источник.]",
+      "verified_by": "https://www.jstor.org/stable/i340793",
+      "id": "C056"
+    },
+    {
+      "printed_page": "201",
+      "section": "Указатель терминов и основных теорем",
+      "place": "Форма — — дефектная",
+      "original": "Форма — — дефектная I, 16, 67",
+      "corrected": "Форма — — дефектная I, 16, 57",
+      "reason": "Дефектная квадратичная форма определена в I §16 на с.57. На с.67 находится II §2 о проективной специальной линейной группе. Номер страницы определения исправлен.",
+      "verified_by": "Два независимых чтения оригинала и определения в основном тексте.",
+      "id": "C057"
+    },
+    {
+      "printed_page": "201",
+      "section": "Указатель терминов и основных теорем",
+      "place": "Форма — кососимметричная",
+      "original": "Форма — кососимметричная I, 16, 25",
+      "corrected": "Форма — кососимметричная I, 6, 25",
+      "reason": "Определение на с.25 находится в I §6, после формулы (11) $f(y,x)=-f(x,y)$. В номере параграфа напечатана лишняя цифра 1.",
+      "verified_by": "Два независимых чтения оригинала и определения в основном тексте.",
+      "id": "C058"
+    },
+    {
+      "printed_page": "201",
+      "section": "Указатель терминов и основных теорем",
+      "place": "Эллиптическая плоскость",
+      "original": "II, 9, 106",
+      "corrected": "II, 10, 106",
+      "reason": "Определение на с.106 относится к §10, который начинается на с.102. Ссылка на §9 неверна; отметка указателя установлена у определения.",
+      "verified_by": "Печатные страницы102 и106, определение в II §10.",
+      "id": "C059"
+    },
+    {
+      "printed_page": "204",
+      "section": "Оглавление",
+      "place": "Начало §8 главы IV",
+      "original": "168",
+      "corrected": "166",
+      "reason": "Реальный заголовок §8 напечатан на с.166. Оглавление нового издания строится из заголовков и вычисляет номер страницы автоматически.",
+      "verified_by": "Заголовок §8 главы IV, с.166 (страница 165 файла).",
+      "id": "C060"
+    },
+    {
+      "printed_page": "204",
+      "section": "Оглавление",
+      "place": "Начало §9 главы IV",
+      "original": "176",
+      "corrected": "178",
+      "reason": "Реальный заголовок §9 напечатан на с.178. Оглавление нового издания строится из заголовков и вычисляет номер страницы автоматически.",
+      "verified_by": "Заголовок §9 главы IV, с.178 (страница 177 файла).",
+      "id": "C061"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Onishchik–Vinberg: PDF",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Onishchik–Vinberg: prepare export",
+        "Onishchik–Vinberg: export (Tinymist)",
+        "Onishchik–Vinberg: validate PDF"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: prepare export",
+      "type": "process",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "python",
+        "scripts/project.py",
+        "editor-prepare"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: export (Tinymist)",
+      "type": "typst",
+      "command": "export",
+      "export": {
+        "format": "pdf",
+        "inputPath": "${workspaceFolder}/content/main.typ",
+        "pdf.pdfTags": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: validate PDF",
+      "type": "process",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "python",
+        "scripts/project.py",
+        "editor-finish"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: check",
+      "type": "process",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "python",
+        "scripts/project.py",
+        "check"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: lint",
+      "type": "process",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "python",
+        "scripts/project.py",
+        "lint"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: PDF without editorial notes",
+      "type": "process",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "python",
+        "scripts/project.py",
+        "build-no-notes"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: corrections",
+      "type": "process",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "python",
+        "scripts/project.py",
+        "corrections"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Onishchik–Vinberg: format",
+      "type": "process",
+      "command": "uv",
+      "args": [
+        "run",
+        "--locked",
+        "python",
+        "scripts/project.py",
+        "fmt"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "max_line_length": 80,
+  "chapter_files": "content/[0-9]{2}-[a-z0-9-]+\\.typ",
+  "cited_helpers": [
+    "bib-item"
+  ],
+  "literal_references": {},
+  "local_markup": {}
+}

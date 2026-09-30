@@ -1,0 +1,22 @@
+[
+  {
+    "file": "checks/lean/Dieudonne/ProjectiveKernel.lean",
+    "declarations": ["Dieudonne.additive_line_preserver_scalar"],
+    "book": "Глава I, §1: коллинеация, сохраняющая каждую прямую, является гомотетией.",
+    "limitations": "Аддитивный шаг для двумерного правого координатного пространства над произвольным телом. Биективность и распространение на высшие размерности не формализованы.",
+    "passages": ["sec:linear-semilinear"]
+  },
+  {
+    "file": "checks/lean/Dieudonne/CharacteristicTwo.lean",
+    "declarations": [
+      "Dieudonne.involution_iff_nilpotent_shift",
+      "Dieudonne.artin_schreier_shift"
+    ],
+    "book": "Глава I, §3: линейная инволюция в характеристике 2; §4, формула (8).",
+    "limitations": "Кольцевое тождество u²=1 iff (u−1)²=0 при 1+1=0 и некоммутативное раскрытие квадрата θ+λ. Классификация тел и продолжение автоморфизмов не формализованы.",
+    "passages": [
+      "sec:involutions-semiinvolutions",
+      "eq:centralizer-characteristic-two-scalar"
+    ]
+  }
+]
