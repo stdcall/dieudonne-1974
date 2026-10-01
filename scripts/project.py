@@ -13,7 +13,11 @@ STAGES = ('draft', 'final')
 
 
 def settings(root=ROOT):
-    return json.loads((root/'config/project.json').read_text())
+    config = json.loads((root/'config/project.json').read_text())
+    local = root/'config/local.json'
+    if local.exists():
+        config.update(json.loads(local.read_text()))
+    return config
 
 
 def layout_settings(root=ROOT):
