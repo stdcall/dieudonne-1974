@@ -1,7 +1,6 @@
 {
   "entry": "content/main.typ",
   "output": "build/dieudonne-1974.pdf",
-  "cache": "~/.cache/dieudonne-1974",
   "stage": "final",
   "pdf_navigation": {
     "outline_left": 0
